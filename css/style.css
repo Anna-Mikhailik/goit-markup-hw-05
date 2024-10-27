@@ -826,10 +826,8 @@ font-weight: 500;
 font-size: 16px;
 line-height: 1.5;
 letter-spacing: 0.02em;
-text-align: center;
 color: #2e2f42;
 margin-bottom: 16px;
-display: inline-flex;
 }
 
 
@@ -926,9 +924,6 @@ display: inline-flex;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
-    display: flex;
-    gap: 8px;
-    align-items: center;
 }
 
 .checkbox-span {
