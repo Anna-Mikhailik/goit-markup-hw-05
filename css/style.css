@@ -735,9 +735,14 @@ border-radius: 4px;
 box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
 background-color: #fcfcfc;
 position: absolute;
+padding-top: 72px;
+padding-right: 24px;
+padding-bottom: 24px;
+padding-left: 24px;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-open {
@@ -755,32 +760,24 @@ transform: translate(-50%, -50%);
 
 
 
-.modal-type-button {
+.modal-btn {
+  display: block;
+  margin: 0 auto;
+  min-width: 169px;
   border-radius: 4px;
-padding: 16px 32px;
-width: 169px;
-height: 56px;
-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-background: #4d5ae5;
-font-family: "Roboto", sans-serif;
-font-weight: 500;
-font-size: 16px;
-
-/* line-height: 24px; */ 
-line-height: 150%;
-letter-spacing: 0.04em;
-text-align: center;
-color: #fff;
-mask-image: ;
-}
-
-
-
-.modal-button {
-padding-top: 24px;
-padding-right: 96px;
-padding-bottom: 27px;
-padding-left: 95px;
+  padding: 16px 32px;
+  height: 56px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #4d5ae5;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 
@@ -795,6 +792,7 @@ padding-left: 95px;
 font-family: "Roboto", sans-serif;
 font-weight: 500;
 font-size: 16px;
+line-height: 1.5;
 
 /* line-height: 24px; */ 
 line-height: 150%;
@@ -804,15 +802,6 @@ color: #2e2f42;
 margin-bottom: 28px;
 }
 
-.modal-input {
-  border: 1px solid rgba(46, 47, 66, 0.4);
-border-radius: 4px;
-width: 360px;
-height: 40px;
-border-color: transparent;
-padding-left: 38px;
-color: teal;
-}
 
 
 
@@ -823,7 +812,7 @@ color: teal;
 
 
 
-is-open {
+.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -848,7 +837,7 @@ is-open {
 }
 
 .modal-field {
-  margin-bottom: 18px;
+  margin-bottom: 8px;
 }
 .input-wrapper {
   position: relative;
@@ -856,32 +845,33 @@ is-open {
 
 .modal-input {
   width: 100%;
-  border: 1px solid rgba(17, 17, 17, 0.15);
-  border-radius: 13px;
-  height: 68px;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
   background-color: transparent;
-  padding-left: 62px;
-  color: teal;
+  padding-left: 38px;
   outline: transparent;
-  transition: border-color 300ms ease;
-}
-
-.modal-icon {
-  fill: transparent;
-  stroke: #111111;
-  position: absolute;
-  left: 24px;
-  bottom: 50%;
-  transform: translateY(50%);
-  transition: stroke var(--cubic);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
-  border-color: #fd9222;
+  border-color: #4d5ae5;
 }
 
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #2e2f42;
+}
+
+
+
 .modal-input:focus + .modal-icon {
-  stroke: #fd9222;
+  fill: #4d5ae5;
 }
 
 .modal-input:disabled {
@@ -889,22 +879,38 @@ is-open {
 }
 
 .modal-label {
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: rgba(64, 64, 64, 0.3);
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
 
 .modal-textarea {
   width: 100%;
-  height: 137px;
-  resize: none;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
   background-color: transparent;
-  border: 1px solid rgba(17, 17, 17, 0.15);
-  border-radius: 13px;
-  padding: 22px 24px;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
+
+
+.modal-textarea:focus {
+  border-color: #4d5ae5;
+}
+
+
+
 
 .modal-textarea::placeholder {
   font-size: 18px;
@@ -913,41 +919,106 @@ is-open {
 }
 
 .modal-check-text {
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: rgba(64, 64, 64, 0.6);
-  display: flex;
-  align-items: center;
-  position: relative;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
 }
 
 
 .modal-check-text span {
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: 1px solid rgba(17, 17, 17, 0.14);
-  margin-right: 12px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   fill: transparent;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-check:checked + .modal-check-text span {
-  background-color: #fd9222;
+
+
+
+
+
+
+.modal-comment {
+  margin-bottom: 16px;
+}
+
+
+.checkbox-span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  fill: transparent;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-logo-iris-iris {
+  color: #4d5ae5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  line-height: 1.3;
+}
+
+
+.modal-check {
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+}
+
+.modal-check:checked {
+  background-color: #404bbf;
   border: none;
-  fill: #ffffff;
+  fill: #f4f4fd;
+}
+
+.check-text {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+.checkbox-span {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 
 
 
-
-
-
-
-
-
-.modal-logo-iris {
-
+.input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding-left: 38px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input:focus {
+  border-color: #4d5ae5;
+}
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #2e2f42;
+}
+.input:focus + .input-icon {
+  fill: #4d5ae5;
 }
