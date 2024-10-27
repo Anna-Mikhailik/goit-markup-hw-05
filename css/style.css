@@ -912,7 +912,7 @@ display: inline-flex;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
-    display: inline-flex;
+    display: flex;
     gap: 8px;
     align-items: center;
 }
@@ -928,14 +928,8 @@ display: inline-flex;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
+  display: inline-flex;
 }
-
-
-
-
-
-
 
 .modal-comment {
   margin-bottom: 16px;
@@ -945,19 +939,6 @@ display: inline-flex;
   margin-bottom: 24px;
 }
 
-.checkbox-span {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  fill: transparent;
-  width: 16px;
-  height: 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 2px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 .modal-logo-iris-iris {
   color: #4d5ae5;
