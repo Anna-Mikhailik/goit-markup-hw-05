@@ -794,7 +794,10 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-open:focus .modal-open-icon,
-.modal-open:hover .modal-open-icon {fill: #ffffff;}
+.modal-open:hover .modal-open-icon {
+  fill: #ffffff;
+  border: none;
+}
 
 
 
@@ -894,9 +897,6 @@ margin-bottom: 16px;
   border-color: #4d5ae5;
 }
 
-
-
-
 .modal-textarea::placeholder {
   font-size: 18px;
   letter-spacing: -0.02em;
@@ -912,7 +912,6 @@ margin-bottom: 16px;
     gap: 8px;
     align-items: center;
 }
-
 
 .modal-check-text span {
   display: inline-flex;
