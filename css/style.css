@@ -617,7 +617,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 8px;
   max-width: 300px;
 }
 
@@ -934,7 +933,7 @@ display: inline-flex;
     align-items: center;
 }
 
-.checkbox-span {
+.checkbox-spn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
