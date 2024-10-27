@@ -908,6 +908,9 @@ margin-bottom: 16px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 
@@ -935,7 +938,9 @@ margin-bottom: 16px;
   margin-bottom: 16px;
 }
 
-.checkbox {margin-bottom: 24px;}
+.checkbox {
+  margin-bottom: 24px;
+}
 
 .checkbox-span {
   display: inline-flex;
@@ -964,7 +969,7 @@ margin-bottom: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
 }
 
-.modal-check:checked .checkbox-span{
+.modal-check:checked + .modal-check-text .checkbox-span{
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
